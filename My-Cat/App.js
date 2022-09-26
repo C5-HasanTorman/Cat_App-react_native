@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { StyleSheet, View, FlatList, Text } from "react-native";
-import { NativeRouter, Switch, Route } from "react-router-native";
+import { StyleSheet, View, FlatList } from "react-native";
 import { v5 as uuidv5 } from "uuid";
 import Header from "./Component/Header";
 import ListCat from "./Component/ListCat";
@@ -22,10 +21,10 @@ export default function App() {
     },
   ]);
 
-  const addCat = () => {
+  const addCat = (name, breed, url, Description) => {
     setCats((prevItems) => {
       return [
-        { id: uuidv5("hasan", MY_NAMESPACE), name, breed, url, Description },
+        { id: uuidv5(name, MY_NAMESPACE), name, breed, url, Description },
         ...prevItems,
       ];
     });

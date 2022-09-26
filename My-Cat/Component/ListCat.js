@@ -5,14 +5,11 @@ const ListCat = ({ cat, deletItem }) => {
     <TouchableOpacity style={styles.listCat}>
       <View style={styles.listCatView}>
         <Text style={styles.listCatVText}>{cat.name}</Text>
-        <View style={styles.butContiner}>
-          <Button style={styles.listCatEidt} title="Edit"></Button>
-          <Button
-            style={styles.listCatRemove}
-            title="X"
-            onPress={() => deletItem(cat.id)}
-          ></Button>
-        </View>
+        <Button
+          style={styles.listCatRemove}
+          title="X"
+          onPress={() => deletItem(cat.id)}
+        ></Button>
       </View>
     </TouchableOpacity>
   );
@@ -41,7 +38,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   listCatRemove: {
-    color: "firebrick",
+    backgroundColor: "firebrick",
   },
   listCatEidt: {
     marginLeft: 50,

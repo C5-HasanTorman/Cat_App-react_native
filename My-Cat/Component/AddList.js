@@ -19,21 +19,25 @@ const AddList = ({ addCat }) => {
         placeholder="Cat Name"
         style={styles.input}
         onChangeText={(newName) => setName(newName)}
+        value={name}
       />
       <TextInput
         placeholder="Breed"
         style={styles.input}
         onChangeText={(newBreed) => setBreed(newBreed)}
+        value={breed}
       />
       <TextInput
         placeholder="Cat Photo"
         style={styles.input}
         onChangeText={(newUrl) => setUrl(newUrl)}
+        value={url}
       />
       <TextInput
         placeholder="Description,"
         style={styles.input}
         onChangeText={(newDescription) => setDescriptione(newDescription)}
+        value={description}
       />
 
       <TouchableOpacity
@@ -42,6 +46,7 @@ const AddList = ({ addCat }) => {
       >
         <Text style={styles.btnText}>Add</Text>
       </TouchableOpacity>
+      
     </View>
   );
 };
@@ -58,7 +63,7 @@ const styles = StyleSheet.create({
     margin: 5,
   },
   btnText: {
-    color: "darkslatablue",
+    color: "dark",
     fontSize: 20,
     textAlign: "center",
   },

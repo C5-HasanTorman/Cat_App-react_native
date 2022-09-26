@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 const Header = () => {
   return (
     <View style={styles.header}>
-      <Text style={styles.text}>My App</Text>
+      <Text style={styles.text}>My Cat App</Text>
     </View>
   );
 };
