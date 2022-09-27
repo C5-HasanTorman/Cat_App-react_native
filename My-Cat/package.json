@@ -19,7 +19,8 @@
     "react-router-native": "^6.4.1",
     "util": "^0.12.4",
     "uuid": "^9.0.0",
-    "uuidv4": "^6.2.13"
+    "uuidv4": "^6.2.13",
+    "expo-updates": "~0.14.6"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"

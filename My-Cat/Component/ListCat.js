@@ -63,18 +63,20 @@ const ListCat = ({ cat, deletItem, updateItem }) => {
                 onChangeText={(newName) => setuUpdateDescription(newName)}
                 value={updateDescription}
               />
-              <Pressable
-                style={[styles.button, styles.buttonClose]}
-                onPress={() => hundleOnPress(cat.id, updateItem)}
-              >
-                <Text style={styles.textStyle}>Update</Text>
-              </Pressable>
-              <Pressable
-                style={[styles.button, styles.buttonClose]}
-                onPress={() => setModalVisible(!modalVisible)}
-              >
-                <Text style={styles.textStyle}>close</Text>
-              </Pressable>
+              <View style={styles.btnContiner}>
+                <Pressable
+                  style={[styles.button, styles.buttonClose]}
+                  onPress={() => hundleOnPress(cat.id, updateItem)}
+                >
+                  <Text style={styles.textStyle}>Update</Text>
+                </Pressable>
+                <Pressable
+                  style={[styles.button, styles.buttonBtn]}
+                  onPress={() => setModalVisible(!modalVisible)}
+                >
+                  <Text style={styles.textStyle}>close</Text>
+                </Pressable>
+              </View>
             </View>
           </View>
         </Modal>
@@ -122,6 +124,9 @@ const styles = StyleSheet.create({
   listCatEidt: {
     marginLeft: 50,
   },
+  buttonBtn: {
+    backgroundColor: "#aac",
+  },
   centeredView: {
     flex: 1,
     justifyContent: "center",
@@ -153,6 +158,7 @@ const styles = StyleSheet.create({
   },
   buttonClose: {
     backgroundColor: "#2196F3",
+    marginRight: 10,
   },
   textStyle: {
     color: "white",
@@ -177,6 +183,10 @@ const styles = StyleSheet.create({
     color: "dark",
     fontSize: 20,
     textAlign: "center",
+  },
+
+  btnContiner: {
+    flexDirection: "row",
   },
 });
 
