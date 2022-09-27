@@ -5,9 +5,11 @@ import {
   View,
   TouchableOpacity,
   TextInput,
+ 
 } from "react-native";
 
 const AddList = ({ addCat }) => {
+
   const [name, setName] = useState("");
   const [breed, setBreed] = useState("");
   const [url, setUrl] = useState("");
@@ -46,7 +48,7 @@ const AddList = ({ addCat }) => {
       >
         <Text style={styles.btnText}>Add</Text>
       </TouchableOpacity>
-      
+    
     </View>
   );
 };
@@ -67,6 +69,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: "center",
   },
+ 
 });
 
 export default AddList;

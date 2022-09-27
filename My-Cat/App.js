@@ -4,6 +4,7 @@ import { v5 as uuidv5 } from "uuid";
 import Header from "./Component/Header";
 import ListCat from "./Component/ListCat";
 import AddList from "./Component/AddList";
+import EditItem from "./Component/EditItem";
 
 const MY_NAMESPACE = "1b671a64-40d5-491e-99b0-da01ff1f3341";
 
@@ -36,14 +37,30 @@ export default function App() {
     });
   };
 
+  const updateItem = (id, name, breed, url, description) => {
+    setCats((prevItems) => {
+      prevItems.map((item) => {
+        if (item.id === id) {
+          item.name = name || item.name;
+          item.breed = breed || item.breed;
+          item.url = url || item.url;
+          item.description = description || item.description;
+        }
+      });
+    });
+  };
+
   return (
     <View style={styles.container}>
       <Header />
       <AddList addCat={addCat} />
       <FlatList
         data={cats}
-        renderItem={({ item }) => <ListCat cat={item} deletItem={deletItem} />}
+        renderItem={({ item }) => (
+          <ListCat cat={item} deletItem={deletItem} updateItem={updateItem} />
+        )}
       />
+      <EditItem />
     </View>
   );
 }
